@@ -53,6 +53,8 @@
     <!-- JavaScripts -->
     <?php If (get_theme_option('Use Accessible Mega Menu')):
         queue_js_file(array('globals', 'vendor/jquery-accessibleMegaMenu'));
+    else:
+        queue_js_file(array('globals'));
     endif; ?>
     <?php // see footer for bootstrap-related js...
     echo head_js(); ?>
