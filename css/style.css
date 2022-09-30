@@ -494,10 +494,10 @@ footer a {
     margin-bottom:20px;
 }
 .asc a::after {
-    content: " ";
+    content: " \25B2";
 }
 .desc a::after {
-    content: " ";
+    content: " \25BC";
 }
 .desc a::after, .asc a::after {
     font-family: "FontAwesome";
