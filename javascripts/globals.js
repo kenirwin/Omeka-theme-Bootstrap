@@ -182,7 +182,7 @@ if (!Omeka) {
         // This is a hack to remove the first instance of the base url path.
         // @kenirwin 2022-10-06
         // There should be a way to fix this in the theme php but I couldn't find where
-        $('.popularity .popular a').each(function () {
+        $('.popularity a').each(function () {
             var link = $(this).attr('href');
             let levels = link.split('/');
             if (levels[1] == levels[2]) {
