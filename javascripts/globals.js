@@ -175,6 +175,22 @@ if (!Omeka) {
 
         // activating popovers on desired page boxen
         // $('.pop-box').popover();
+
+        // This is a lousy hack but the only way I could get the tag links correct.
+        // In this theme, the tag links seem to double up the base url path, e.g.
+        // /omeka/omeka/items/browse?tags=tagname
+        // This is a hack to remove the first instance of the base url path.
+        // @kenirwin 2022-10-06
+        // There should be a way to fix this in the theme php but I couldn't find where
+        $('.popularity .popular a').each(function () {
+            var link = $(this).attr('href');
+            let levels = link.split('/');
+            if (levels[1] == levels[2]) {
+            levels.splice(1, 1);
+            $(this).attr('href', levels.join('/'));
+            }
+        });
+        });
     });
 
     // Adapted from the plugin Taxonomy (taxonomy.js).
